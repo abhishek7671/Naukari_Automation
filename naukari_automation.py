@@ -72,6 +72,8 @@ def setup_driver(headless=HEADLESS):
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
     options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
     if headless:
         options.add_argument("--headless=new")
     options.add_argument("--disable-gpu")
@@ -104,7 +106,8 @@ def snapshot_page(driver, name_prefix="snapshot"):
 # ---------------- Cookie management ----------------
 def save_cookies(driver, path=COOKIE_FILE):
     try:
-        pickle.dump(driver.get_cookies(), open(path, 'wb'))
+        with open(path, 'wb') as f:
+            pickle.dump(driver.get_cookies(), f)
         logging.info(f"Saved cookies to {path}")
     except Exception as e:
         logging.error(f"Failed to save cookies: {e}")
@@ -113,7 +116,8 @@ def load_cookies(driver, path=COOKIE_FILE):
     if not path.exists():
         return False
     try:
-        cookies = pickle.load(open(path, 'rb'))
+        with open(path, 'rb') as f:
+            cookies = pickle.load(f)
         driver.get("https://www.naukri.com")
         for c in cookies:
             c.pop('sameSite', None)
@@ -169,24 +173,26 @@ def login_naukri(driver, allow_manual_otp=True):
     if not NAUKRI_EMAIL or not NAUKRI_PASSWORD:
         raise RuntimeError("NAUKRI_EMAIL or NAUKRI_PASSWORD missing in environment")
 
-    driver.get("https://www.naukri.com/nlogin/login")
     try:
         if COOKIE_FILE.exists():
             loaded = load_cookies(driver)
             if loaded:
                 time.sleep(2)
-                # quick heuristic to check if logged in
-                if "mnjuser" in driver.current_url or "profile" in driver.current_url:
+                driver.get("https://www.naukri.com/mnjuser/profile")
+                time.sleep(2)
+                if ("mnjuser" in driver.current_url or "profile" in driver.current_url) and "login" not in driver.current_url:
                     logging.info("Already logged in via cookies")
                     return True
+                logging.info("Cookies expired or invalid. Navigating to login page...")
 
+        driver.get("https://www.naukri.com/nlogin/login")
         # Fill form
         try:
             email_el = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'usernameField')))
             pwd_el = driver.find_element(By.ID, 'passwordField')
             email_el.clear(); email_el.send_keys(NAUKRI_EMAIL)
             pwd_el.clear(); pwd_el.send_keys(NAUKRI_PASSWORD)
-            login_btn = driver.find_element(By.CLASS_NAME, 'loginButton')
+            login_btn = driver.find_element(By.XPATH, "//button[@type='submit']")
             login_btn.click()
         except TimeoutException:
             logging.warning("Login fields not found; page layout may have changed")
@@ -238,38 +244,66 @@ def login_naukri(driver, allow_manual_otp=True):
 def upload_resume_to_profile(driver):
     try:
         driver.get('https://www.naukri.com/mnjuser/profile')
-        WebDriverWait(driver, 12).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
+        # Wait specifically for the profile's resume file input element (attachCV) to render
+        try:
+            WebDriverWait(driver, 25).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@id='attachCV']"))
+            )
+        except TimeoutException:
+            logging.warning("Timed out waiting for resume upload element (attachCV) to render. Proceeding...")
 
-        file_inputs = driver.find_elements(By.XPATH, "//input[@type='file']")
+        # Prioritize matching the resume input specifically by its ID 'attachCV'
+        file_inputs = driver.find_elements(By.XPATH, "//input[@id='attachCV']")
+        
+        # If not found by ID, look for file inputs that do not accept image types (avoids profile photo input)
+        if not file_inputs:
+            all_file_inputs = driver.find_elements(By.XPATH, "//input[@type='file']")
+            file_inputs = [
+                el for el in all_file_inputs 
+                if "image" not in (el.get_attribute("accept") or "").lower()
+            ]
+
         if not file_inputs:
             # try searching inside iframes
             iframes = driver.find_elements(By.TAG_NAME, 'iframe')
             for fr in iframes:
                 try:
                     driver.switch_to.frame(fr)
-                    file_inputs = driver.find_elements(By.XPATH, "//input[@type='file']")
+                    all_file_inputs = driver.find_elements(By.XPATH, "//input[@type='file']")
+                    file_inputs = [
+                        el for el in all_file_inputs 
+                        if "image" not in (el.get_attribute("accept") or "").lower()
+                    ]
                     if file_inputs:
                         break
                     driver.switch_to.default_content()
                 except Exception:
                     driver.switch_to.default_content()
 
-        if not file_inputs:
-            try:
-                el = driver.find_element(By.XPATH, "//input[@type='file']")
-                driver.execute_script("arguments[0].style.display = 'block'; arguments[0].style.visibility='visible';", el)
-                file_inputs = [el]
-            except Exception:
-                pass
-
+        # Ensure the selected input element is styled to be interactable
         if file_inputs:
             input_el = file_inputs[0]
+            try:
+                driver.execute_script("arguments[0].style.display = 'block'; arguments[0].style.visibility='visible';", input_el)
+            except Exception:
+                pass
             if not RESUME_PATH or not Path(RESUME_PATH).exists():
                 logging.error('RESUME_PATH missing or file does not exist in environment')
                 return False
             input_el.send_keys(str(RESUME_PATH))
             logging.info('Sent resume file path to file input. Waiting for upload to complete...')
-            time.sleep(3 + random.uniform(0.5, 2.0))
+            
+            # Wait up to 25 seconds for the success notification toast to appear in the DOM
+            try:
+                WebDriverWait(driver, 25).until(
+                    EC.presence_of_element_located((By.XPATH, "//*[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'uploaded successfully') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'successfully uploaded') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'resume has been')]"))
+                )
+                logging.info("Confirmed: Success toast detected on Naukri page.")
+            except TimeoutException:
+                logging.warning("No success toast detected within 25 seconds. Taking page snapshot to verify...")
+                snapshot_page(driver, 'upload_verify_timeout')
+                time.sleep(5)  # Fallback buffer sleep
+
             logging.info('Resume upload attempted')
             driver.switch_to.default_content()
             return True
@@ -349,14 +383,39 @@ def search_and_apply_jobs_once():
                 if not jobs:
                     jobs = driver.find_elements(By.XPATH, "//div[contains(@class,'jobTuple')]//a")
 
+                collected_jobs = []
                 for job in jobs[:MAX_JOB_PER_KEYWORD]:
                     try:
-                        job_title = job.text
-                        job_link = job.get_attribute('href')
-                        job_links.append(job_link)
+                        title = job.text
+                        link = job.get_attribute('href')
+                        if title and link:
+                            collected_jobs.append({'title': title, 'link': link})
+                    except Exception as e:
+                        logging.warning(f"Error reading job element: {e}")
 
-                        if any(kw in normalize(job_title) for kw in APPLY_KEYWORDS):
-                            logging.info(f"Considering auto-apply for: {job_title}")
+                # Load existing links to avoid duplicate apply/visits
+                existing_links = []
+                if JOB_LINKS_CSV.exists():
+                    try:
+                        existing_df = pd.read_csv(JOB_LINKS_CSV)
+                        if 'Job Links' in existing_df.columns:
+                            existing_links = existing_df['Job Links'].dropna().tolist()
+                    except Exception as e:
+                        logging.warning(f"Failed to read existing job links CSV: {e}")
+
+                for job_data in collected_jobs:
+                    job_title = job_data['title']
+                    job_link = job_data['link']
+
+                    if job_link in existing_links:
+                        logging.info(f"Already applied/processed: {job_title} ({job_link}). Skipping.")
+                        continue
+
+                    job_links.append(job_link)
+
+                    if any(kw in normalize(job_title) for kw in APPLY_KEYWORDS):
+                        logging.info(f"Considering auto-apply for: {job_title}")
+                        try:
                             driver.get(job_link)
                             time.sleep(2 + random.uniform(0.5, 1.5))
 
@@ -370,19 +429,30 @@ def search_and_apply_jobs_once():
                                     logging.warning(f"Apply click failed: {e}")
                             else:
                                 logging.info(f"No one-click apply found for {job_title}; saved link for manual apply")
-                        else:
-                            logging.info(f"Skipped auto-apply (keywords mismatch): {job_title}")
-                    except Exception as e:
-                        logging.error(f"Error handling job card: {e}")
-                        snapshot_page(driver, 'job_card_error')
+                        except Exception as e:
+                            logging.error(f"Error processing job page {job_link}: {e}")
+                            snapshot_page(driver, 'job_page_error')
+                    else:
+                        logging.info(f"Skipped auto-apply (keywords mismatch): {job_title}")
 
             except Exception as e:
                 logging.error(f"Search loop error for keyword {keyword}: {e}")
                 snapshot_page(driver, 'search_loop_error')
 
-        df = pd.DataFrame({'Job Links': job_links})
+        # Combine existing and new job links, preserving uniqueness
+        if JOB_LINKS_CSV.exists():
+            try:
+                existing_df = pd.read_csv(JOB_LINKS_CSV)
+                existing_links = existing_df['Job Links'].dropna().tolist() if 'Job Links' in existing_df.columns else []
+            except Exception:
+                existing_links = []
+        else:
+            existing_links = []
+
+        combined_links = existing_links + [link for link in job_links if link not in existing_links]
+        df = pd.DataFrame({'Job Links': combined_links})
         df.to_csv(JOB_LINKS_CSV, index=False)
-        logging.info(f"Saved {len(job_links)} job links to {JOB_LINKS_CSV}")
+        logging.info(f"Saved {len(combined_links)} total job links (added {len(job_links)} new) to {JOB_LINKS_CSV}")
 
     except Exception as e:
         logging.error(f"search_and_apply_jobs_once failed: {e}")
@@ -412,6 +482,18 @@ def task_update_resume():
             driver.quit()
 
 # ---------------- Scheduler start ----------------
+# Run tasks immediately once on startup (if weekday)
+if datetime.today().weekday() < 5:
+    logging.info("Triggering initial resume update and job search/apply immediately on boot...")
+    try:
+        task_update_resume()
+    except Exception as e:
+        logging.error(f"Initial resume update failed: {e}")
+    try:
+        search_and_apply_jobs_once()
+    except Exception as e:
+        logging.error(f"Initial job search/apply failed: {e}")
+
 schedule.every(RESUME_UPDATE_MINUTES).minutes.do(task_update_resume)
 schedule.every(JOB_SEARCH_HOURS).hours.do(search_and_apply_jobs_once)
 

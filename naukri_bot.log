@@ -1,0 +1,599 @@
+2026-07-10 10:55:44,858 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 10:58:50,573 - INFO - Script interrupted by user. Exiting.
+2026-07-10 10:58:57,303 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:00:04,944 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:00:14,103 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:05:14,114 - INFO - Scheduled: update_resume
+2026-07-10 11:05:14,115 - INFO - ====== WebDriver manager ======
+2026-07-10 11:05:19,558 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:05:19,699 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:05:19,757 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:05:30,320 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:05:35,442 - INFO - Already logged in via cookies
+2026-07-10 11:05:35,936 - ERROR - No file input found for resume upload
+2026-07-10 11:05:35,992 - INFO - Saved snapshot: snapshots\resume_input_notfound_20260710_110535.html
+2026-07-10 11:05:35,993 - ERROR - Resume update failed
+2026-07-10 11:08:59,449 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:09:22,893 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:12:48,763 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:13:00,087 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:15:00,090 - INFO - Scheduled: update_resume
+2026-07-10 11:15:00,091 - INFO - ====== WebDriver manager ======
+2026-07-10 11:15:04,815 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:15:04,903 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:15:04,949 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:15:15,182 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:15:20,033 - INFO - Cookies expired or invalid. Navigating to login page...
+2026-07-10 11:15:21,100 - ERROR - Login failed: Message: no such element: Unable to locate element: {"method":"css selector","selector":".loginButton"}
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x6eb593+105d3]
+	chromedriver!GetHandleVerifier [0x6eb6c4+10704]
+	chromedriver!(No symbol) [0x4f1ea0]
+	chromedriver!(No symbol) [0x53b28a]
+	chromedriver!(No symbol) [0x53b52b]
+	chromedriver!(No symbol) [0x57d052]
+	chromedriver!(No symbol) [0x55d7c4]
+	chromedriver!(No symbol) [0x57a936]
+	chromedriver!(No symbol) [0x55d516]
+	chromedriver!(No symbol) [0x5308e9]
+	chromedriver!(No symbol) [0x5316a4]
+	chromedriver!GetHandleVerifier [0x973014+298054]
+	chromedriver!GetHandleVerifier [0x96e603+293643]
+	chromedriver!GetHandleVerifier [0x98ea05+2b3a45]
+	chromedriver!GetHandleVerifier [0x7054e8+2a528]
+	chromedriver!GetHandleVerifier [0x70cd1d+31d5d]
+	chromedriver!GetHandleVerifier [0x6f3e68+18ea8]
+	chromedriver!GetHandleVerifier [0x6f4015+19055]
+	chromedriver!GetHandleVerifier [0x6dd65f+269f]
+	KERNEL32!BaseThreadInitThunk [0x768f5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c4e12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c4e0b1+231]
+
+2026-07-10 11:15:21,151 - INFO - Saved snapshot: snapshots\login_failed_20260710_111521.html
+2026-07-10 11:15:21,151 - ERROR - Could not login; skipping resume update
+2026-07-10 11:16:16,747 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:16:24,832 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:16:25,163 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:16:31,922 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:18:31,925 - INFO - Scheduled: update_resume
+2026-07-10 11:18:31,926 - INFO - ====== WebDriver manager ======
+2026-07-10 11:18:36,801 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:18:36,937 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:18:36,983 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:18:47,628 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:18:52,828 - INFO - Cookies expired or invalid. Navigating to login page...
+2026-07-10 11:18:53,742 - ERROR - Login failed: Message: no such element: Unable to locate element: {"method":"css selector","selector":".loginButton"}
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x6eb593+105d3]
+	chromedriver!GetHandleVerifier [0x6eb6c4+10704]
+	chromedriver!(No symbol) [0x4f1ea0]
+	chromedriver!(No symbol) [0x53b28a]
+	chromedriver!(No symbol) [0x53b52b]
+	chromedriver!(No symbol) [0x57d052]
+	chromedriver!(No symbol) [0x55d7c4]
+	chromedriver!(No symbol) [0x57a936]
+	chromedriver!(No symbol) [0x55d516]
+	chromedriver!(No symbol) [0x5308e9]
+	chromedriver!(No symbol) [0x5316a4]
+	chromedriver!GetHandleVerifier [0x973014+298054]
+	chromedriver!GetHandleVerifier [0x96e603+293643]
+	chromedriver!GetHandleVerifier [0x98ea05+2b3a45]
+	chromedriver!GetHandleVerifier [0x7054e8+2a528]
+	chromedriver!GetHandleVerifier [0x70cd1d+31d5d]
+	chromedriver!GetHandleVerifier [0x6f3e68+18ea8]
+	chromedriver!GetHandleVerifier [0x6f4015+19055]
+	chromedriver!GetHandleVerifier [0x6dd65f+269f]
+	KERNEL32!BaseThreadInitThunk [0x768f5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c4e12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c4e0b1+231]
+
+2026-07-10 11:18:53,790 - INFO - Saved snapshot: snapshots\login_failed_20260710_111853.html
+2026-07-10 11:18:53,791 - ERROR - Could not login; skipping resume update
+2026-07-10 11:20:58,582 - INFO - Scheduled: update_resume
+2026-07-10 11:20:58,582 - INFO - ====== WebDriver manager ======
+2026-07-10 11:21:03,175 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:21:03,214 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:21:03,282 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:21:13,716 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:21:18,677 - INFO - Cookies expired or invalid. Navigating to login page...
+2026-07-10 11:21:19,999 - ERROR - Login failed: Message: no such element: Unable to locate element: {"method":"css selector","selector":".loginButton"}
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x6eb593+105d3]
+	chromedriver!GetHandleVerifier [0x6eb6c4+10704]
+	chromedriver!(No symbol) [0x4f1ea0]
+	chromedriver!(No symbol) [0x53b28a]
+	chromedriver!(No symbol) [0x53b52b]
+	chromedriver!(No symbol) [0x57d052]
+	chromedriver!(No symbol) [0x55d7c4]
+	chromedriver!(No symbol) [0x57a936]
+	chromedriver!(No symbol) [0x55d516]
+	chromedriver!(No symbol) [0x5308e9]
+	chromedriver!(No symbol) [0x5316a4]
+	chromedriver!GetHandleVerifier [0x973014+298054]
+	chromedriver!GetHandleVerifier [0x96e603+293643]
+	chromedriver!GetHandleVerifier [0x98ea05+2b3a45]
+	chromedriver!GetHandleVerifier [0x7054e8+2a528]
+	chromedriver!GetHandleVerifier [0x70cd1d+31d5d]
+	chromedriver!GetHandleVerifier [0x6f3e68+18ea8]
+	chromedriver!GetHandleVerifier [0x6f4015+19055]
+	chromedriver!GetHandleVerifier [0x6dd65f+269f]
+	KERNEL32!BaseThreadInitThunk [0x768f5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c4e12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c4e0b1+231]
+
+2026-07-10 11:21:20,058 - INFO - Saved snapshot: snapshots\login_failed_20260710_112119.html
+2026-07-10 11:21:20,058 - ERROR - Could not login; skipping resume update
+2026-07-10 11:22:34,658 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:22:38,472 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:24:38,473 - INFO - Scheduled: update_resume
+2026-07-10 11:24:38,473 - INFO - ====== WebDriver manager ======
+2026-07-10 11:24:48,342 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:24:48,537 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:24:48,638 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:24:58,463 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:25:03,135 - INFO - Cookies expired or invalid. Navigating to login page...
+2026-07-10 11:25:10,938 - INFO - Saved cookies to naukri_cookies.pkl
+2026-07-10 11:25:11,685 - ERROR - No file input found for resume upload
+2026-07-10 11:25:11,821 - INFO - Saved snapshot: snapshots\resume_input_notfound_20260710_112511.html
+2026-07-10 11:25:11,822 - ERROR - Resume update failed
+2026-07-10 11:27:16,341 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:27:27,741 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:29:27,743 - INFO - Scheduled: update_resume
+2026-07-10 11:29:27,743 - INFO - ====== WebDriver manager ======
+2026-07-10 11:29:32,407 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:29:32,500 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:29:32,543 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:29:42,157 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:29:46,963 - INFO - Already logged in via cookies
+2026-07-10 11:29:47,670 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:29:52,414 - INFO - Resume upload attempted
+2026-07-10 11:29:52,422 - INFO - Resume update attempted successfully
+2026-07-10 11:31:56,628 - INFO - Scheduled: update_resume
+2026-07-10 11:31:56,628 - INFO - ====== WebDriver manager ======
+2026-07-10 11:32:02,492 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:32:02,554 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:32:02,612 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:32:14,659 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:32:19,441 - INFO - Already logged in via cookies
+2026-07-10 11:32:20,318 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:32:25,117 - INFO - Resume upload attempted
+2026-07-10 11:32:25,126 - INFO - Resume update attempted successfully
+2026-07-10 11:34:30,100 - INFO - Scheduled: update_resume
+2026-07-10 11:34:30,100 - INFO - ====== WebDriver manager ======
+2026-07-10 11:34:38,376 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:34:38,419 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:34:38,465 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:34:48,052 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:34:53,703 - INFO - Already logged in via cookies
+2026-07-10 11:34:55,136 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:35:00,020 - INFO - Resume upload attempted
+2026-07-10 11:35:00,043 - INFO - Resume update attempted successfully
+2026-07-10 11:37:05,092 - INFO - Scheduled: update_resume
+2026-07-10 11:37:05,092 - INFO - ====== WebDriver manager ======
+2026-07-10 11:37:12,366 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:37:12,418 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:37:12,463 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:37:23,474 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:37:29,656 - INFO - Already logged in via cookies
+2026-07-10 11:37:31,005 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:37:35,967 - INFO - Resume upload attempted
+2026-07-10 11:37:35,974 - INFO - Resume update attempted successfully
+2026-07-10 11:37:58,208 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:38:15,204 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:38:22,278 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:38:27,700 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:39:27,701 - INFO - Scheduled: update_resume
+2026-07-10 11:39:27,702 - INFO - ====== WebDriver manager ======
+2026-07-10 11:39:32,102 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:39:32,181 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:39:32,217 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:39:40,631 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:39:45,482 - INFO - Already logged in via cookies
+2026-07-10 11:39:46,543 - ERROR - No file input found for resume upload
+2026-07-10 11:39:46,722 - INFO - Saved snapshot: snapshots\resume_input_notfound_20260710_113946.html
+2026-07-10 11:39:46,723 - ERROR - Resume update failed
+2026-07-10 11:40:51,845 - INFO - Scheduled: update_resume
+2026-07-10 11:40:51,846 - INFO - ====== WebDriver manager ======
+2026-07-10 11:40:56,594 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:40:56,641 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:40:56,711 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:41:06,056 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:41:11,280 - INFO - Already logged in via cookies
+2026-07-10 11:41:12,340 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:41:13,785 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:41:13,785 - INFO - Resume upload attempted
+2026-07-10 11:41:13,790 - INFO - Resume update attempted successfully
+2026-07-10 11:42:19,843 - INFO - Scheduled: update_resume
+2026-07-10 11:42:19,843 - INFO - ====== WebDriver manager ======
+2026-07-10 11:42:25,569 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:42:25,620 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:42:25,689 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:42:35,401 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:42:39,840 - INFO - Already logged in via cookies
+2026-07-10 11:42:40,619 - ERROR - No file input found for resume upload
+2026-07-10 11:42:40,720 - INFO - Saved snapshot: snapshots\resume_input_notfound_20260710_114240.html
+2026-07-10 11:42:40,721 - ERROR - Resume update failed
+2026-07-10 11:43:21,215 - INFO - Script interrupted by user. Exiting.
+2026-07-10 11:43:26,753 - INFO - Scheduler started. Press Ctrl+C to stop.
+2026-07-10 11:44:26,755 - INFO - Scheduled: update_resume
+2026-07-10 11:44:26,756 - INFO - ====== WebDriver manager ======
+2026-07-10 11:44:31,104 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:44:31,221 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:44:31,260 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:44:42,142 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:44:47,015 - INFO - Already logged in via cookies
+2026-07-10 11:44:48,576 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:44:49,864 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:44:49,865 - INFO - Resume upload attempted
+2026-07-10 11:44:49,874 - INFO - Resume update attempted successfully
+2026-07-10 11:45:54,596 - INFO - Scheduled: update_resume
+2026-07-10 11:45:54,597 - INFO - ====== WebDriver manager ======
+2026-07-10 11:45:59,625 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:45:59,835 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:45:59,887 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:46:09,718 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:46:14,697 - INFO - Already logged in via cookies
+2026-07-10 11:46:16,262 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:46:17,568 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:46:17,569 - INFO - Resume upload attempted
+2026-07-10 11:46:17,591 - INFO - Resume update attempted successfully
+2026-07-10 11:47:21,679 - INFO - Scheduled: update_resume
+2026-07-10 11:47:21,679 - INFO - ====== WebDriver manager ======
+2026-07-10 11:47:28,085 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:47:28,168 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:47:28,253 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:47:38,871 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:47:44,732 - INFO - Already logged in via cookies
+2026-07-10 11:47:46,465 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:47:47,881 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:47:47,881 - INFO - Resume upload attempted
+2026-07-10 11:47:47,897 - INFO - Resume update attempted successfully
+2026-07-10 11:48:52,786 - INFO - Scheduled: update_resume
+2026-07-10 11:48:52,786 - INFO - ====== WebDriver manager ======
+2026-07-10 11:49:03,334 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:49:03,414 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:49:03,521 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:49:16,389 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:49:21,990 - INFO - Already logged in via cookies
+2026-07-10 11:49:23,501 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:49:24,359 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:49:24,361 - INFO - Resume upload attempted
+2026-07-10 11:49:24,375 - INFO - Resume update attempted successfully
+2026-07-10 11:50:29,506 - INFO - Scheduled: update_resume
+2026-07-10 11:50:29,506 - INFO - ====== WebDriver manager ======
+2026-07-10 11:50:37,263 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:50:37,317 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:50:37,373 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:50:47,501 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:50:52,434 - INFO - Already logged in via cookies
+2026-07-10 11:50:54,032 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:50:55,437 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:50:55,438 - INFO - Resume upload attempted
+2026-07-10 11:50:55,459 - INFO - Resume update attempted successfully
+2026-07-10 11:52:00,343 - INFO - Scheduled: update_resume
+2026-07-10 11:52:00,343 - INFO - ====== WebDriver manager ======
+2026-07-10 11:52:08,491 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:52:08,592 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:52:08,749 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:52:20,154 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:52:25,499 - INFO - Already logged in via cookies
+2026-07-10 11:52:27,980 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:52:29,468 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:52:29,469 - INFO - Resume upload attempted
+2026-07-10 11:52:29,489 - INFO - Resume update attempted successfully
+2026-07-10 11:53:33,958 - INFO - Scheduled: update_resume
+2026-07-10 11:53:33,958 - INFO - ====== WebDriver manager ======
+2026-07-10 11:53:41,621 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:53:41,953 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:53:41,998 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:53:58,275 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:54:03,899 - INFO - Already logged in via cookies
+2026-07-10 11:54:05,455 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:54:06,736 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:54:06,736 - INFO - Resume upload attempted
+2026-07-10 11:54:06,739 - INFO - Resume update attempted successfully
+2026-07-10 11:55:11,213 - INFO - Scheduled: update_resume
+2026-07-10 11:55:11,214 - INFO - ====== WebDriver manager ======
+2026-07-10 11:55:18,624 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:55:18,704 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:55:18,786 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:55:29,273 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:55:34,311 - INFO - Already logged in via cookies
+2026-07-10 11:55:35,990 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:55:37,371 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:55:37,371 - INFO - Resume upload attempted
+2026-07-10 11:55:37,378 - INFO - Resume update attempted successfully
+2026-07-10 11:56:42,027 - INFO - Scheduled: update_resume
+2026-07-10 11:56:42,027 - INFO - ====== WebDriver manager ======
+2026-07-10 11:56:48,180 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:56:48,238 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:56:48,292 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:57:03,421 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:57:09,674 - INFO - Already logged in via cookies
+2026-07-10 11:57:11,469 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:57:12,271 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:57:12,271 - INFO - Resume upload attempted
+2026-07-10 11:57:12,283 - INFO - Resume update attempted successfully
+2026-07-10 11:58:17,256 - INFO - Scheduled: update_resume
+2026-07-10 11:58:17,256 - INFO - ====== WebDriver manager ======
+2026-07-10 11:58:22,841 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:58:22,912 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:58:22,956 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:58:30,905 - INFO - Loaded cookies and refreshed.
+2026-07-10 11:58:36,064 - INFO - Already logged in via cookies
+2026-07-10 11:58:37,968 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 11:58:38,760 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 11:58:38,760 - INFO - Resume upload attempted
+2026-07-10 11:58:38,831 - INFO - Resume update attempted successfully
+2026-07-10 11:59:43,673 - INFO - Scheduled: update_resume
+2026-07-10 11:59:43,673 - INFO - ====== WebDriver manager ======
+2026-07-10 11:59:49,248 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:59:49,304 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 11:59:49,366 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 11:59:58,750 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:00:04,717 - INFO - Already logged in via cookies
+2026-07-10 12:00:06,985 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:00:08,382 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:00:08,383 - INFO - Resume upload attempted
+2026-07-10 12:00:08,399 - INFO - Resume update attempted successfully
+2026-07-10 12:01:13,387 - INFO - Scheduled: update_resume
+2026-07-10 12:01:13,388 - INFO - ====== WebDriver manager ======
+2026-07-10 12:01:19,799 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:01:19,870 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:01:19,915 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:01:31,898 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:01:37,285 - INFO - Already logged in via cookies
+2026-07-10 12:01:39,184 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:01:40,620 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:01:40,620 - INFO - Resume upload attempted
+2026-07-10 12:01:40,636 - INFO - Resume update attempted successfully
+2026-07-10 12:02:46,359 - INFO - Scheduled: update_resume
+2026-07-10 12:02:46,359 - INFO - ====== WebDriver manager ======
+2026-07-10 12:02:51,604 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:02:51,648 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:02:51,702 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:03:01,411 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:03:06,711 - INFO - Already logged in via cookies
+2026-07-10 12:03:09,020 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:03:10,512 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:03:10,512 - INFO - Resume upload attempted
+2026-07-10 12:03:10,518 - INFO - Resume update attempted successfully
+2026-07-10 12:04:16,391 - INFO - Scheduled: update_resume
+2026-07-10 12:04:16,391 - INFO - ====== WebDriver manager ======
+2026-07-10 12:04:22,014 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:04:22,054 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:04:22,092 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:04:31,456 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:04:36,572 - INFO - Already logged in via cookies
+2026-07-10 12:04:38,407 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:04:39,808 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:04:39,808 - INFO - Resume upload attempted
+2026-07-10 12:04:39,821 - INFO - Resume update attempted successfully
+2026-07-10 12:05:44,600 - INFO - Scheduled: update_resume
+2026-07-10 12:05:44,600 - INFO - ====== WebDriver manager ======
+2026-07-10 12:05:50,588 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:05:50,647 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:05:50,689 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:06:00,959 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:06:06,339 - INFO - Already logged in via cookies
+2026-07-10 12:06:07,846 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:06:09,886 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:06:09,886 - INFO - Resume upload attempted
+2026-07-10 12:06:09,903 - INFO - Resume update attempted successfully
+2026-07-10 12:07:14,702 - INFO - Scheduled: update_resume
+2026-07-10 12:07:14,702 - INFO - ====== WebDriver manager ======
+2026-07-10 12:07:20,514 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:07:20,561 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:07:20,621 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:07:30,790 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:07:36,078 - INFO - Already logged in via cookies
+2026-07-10 12:07:37,764 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:07:39,155 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:07:39,156 - INFO - Resume upload attempted
+2026-07-10 12:07:39,160 - INFO - Resume update attempted successfully
+2026-07-10 12:08:44,064 - INFO - Scheduled: update_resume
+2026-07-10 12:08:44,064 - INFO - ====== WebDriver manager ======
+2026-07-10 12:08:51,618 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:08:51,673 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:08:51,805 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:09:08,976 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:09:14,036 - INFO - Already logged in via cookies
+2026-07-10 12:09:16,662 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:09:18,244 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:09:18,244 - INFO - Resume upload attempted
+2026-07-10 12:09:18,254 - INFO - Resume update attempted successfully
+2026-07-10 12:10:25,141 - INFO - Scheduled: update_resume
+2026-07-10 12:10:25,141 - INFO - ====== WebDriver manager ======
+2026-07-10 12:10:31,591 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:10:31,823 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:10:31,901 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:10:41,726 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:10:46,794 - INFO - Already logged in via cookies
+2026-07-10 12:10:49,089 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:10:49,823 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:10:49,823 - INFO - Resume upload attempted
+2026-07-10 12:10:49,836 - INFO - Resume update attempted successfully
+2026-07-10 12:11:53,903 - INFO - Scheduled: update_resume
+2026-07-10 12:11:53,903 - INFO - ====== WebDriver manager ======
+2026-07-10 12:12:02,018 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:12:02,130 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:12:02,220 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:12:12,980 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:12:18,522 - INFO - Already logged in via cookies
+2026-07-10 12:12:20,622 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:12:21,611 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:12:21,612 - INFO - Resume upload attempted
+2026-07-10 12:12:21,640 - INFO - Resume update attempted successfully
+2026-07-10 12:13:27,634 - INFO - Scheduled: update_resume
+2026-07-10 12:13:27,635 - INFO - ====== WebDriver manager ======
+2026-07-10 12:13:34,751 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:13:34,806 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:13:34,857 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:13:44,487 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:13:49,492 - INFO - Already logged in via cookies
+2026-07-10 12:13:50,908 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:13:51,619 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:13:51,619 - INFO - Resume upload attempted
+2026-07-10 12:13:51,653 - INFO - Resume update attempted successfully
+2026-07-10 12:14:55,707 - INFO - Scheduled: update_resume
+2026-07-10 12:14:55,707 - INFO - ====== WebDriver manager ======
+2026-07-10 12:15:02,997 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:15:03,052 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:15:03,087 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:15:13,116 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:15:18,164 - INFO - Already logged in via cookies
+2026-07-10 12:15:19,683 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:15:21,009 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:15:21,010 - INFO - Resume upload attempted
+2026-07-10 12:15:21,021 - INFO - Resume update attempted successfully
+2026-07-10 12:16:25,196 - INFO - Scheduled: update_resume
+2026-07-10 12:16:25,196 - INFO - ====== WebDriver manager ======
+2026-07-10 12:16:31,144 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:16:31,182 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:16:31,238 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:16:41,026 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:16:45,849 - INFO - Already logged in via cookies
+2026-07-10 12:16:47,542 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:16:48,955 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:16:48,955 - INFO - Resume upload attempted
+2026-07-10 12:16:48,966 - INFO - Resume update attempted successfully
+2026-07-10 12:17:52,970 - INFO - Scheduled: update_resume
+2026-07-10 12:17:52,971 - INFO - ====== WebDriver manager ======
+2026-07-10 12:17:59,599 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:17:59,643 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:17:59,696 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:18:09,429 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:18:14,303 - INFO - Already logged in via cookies
+2026-07-10 12:18:15,910 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:18:16,640 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:18:16,641 - INFO - Resume upload attempted
+2026-07-10 12:18:16,654 - INFO - Resume update attempted successfully
+2026-07-10 12:19:21,046 - INFO - Scheduled: update_resume
+2026-07-10 12:19:21,047 - INFO - ====== WebDriver manager ======
+2026-07-10 12:19:32,710 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:19:32,817 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:19:32,922 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:19:50,125 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:19:56,063 - INFO - Already logged in via cookies
+2026-07-10 12:19:58,801 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:20:00,331 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:20:00,332 - INFO - Resume upload attempted
+2026-07-10 12:20:00,586 - INFO - Resume update attempted successfully
+2026-07-10 12:21:07,608 - INFO - Scheduled: update_resume
+2026-07-10 12:21:07,610 - INFO - ====== WebDriver manager ======
+2026-07-10 12:21:21,470 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:21:21,534 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:21:21,617 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:21:34,702 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:21:40,481 - INFO - Already logged in via cookies
+2026-07-10 12:21:43,082 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:21:44,601 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:21:44,602 - INFO - Resume upload attempted
+2026-07-10 12:21:44,621 - INFO - Resume update attempted successfully
+2026-07-10 12:22:50,633 - INFO - Scheduled: update_resume
+2026-07-10 12:22:50,634 - INFO - ====== WebDriver manager ======
+2026-07-10 12:23:04,705 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:23:04,780 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:23:04,893 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:23:21,105 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:23:29,647 - INFO - Already logged in via cookies
+2026-07-10 12:23:31,961 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:23:33,422 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:23:33,425 - INFO - Resume upload attempted
+2026-07-10 12:23:33,528 - INFO - Resume update attempted successfully
+2026-07-10 12:24:41,207 - INFO - Scheduled: update_resume
+2026-07-10 12:24:41,207 - INFO - ====== WebDriver manager ======
+2026-07-10 12:24:50,436 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:24:50,523 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:24:50,613 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:25:02,106 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:25:07,569 - INFO - Already logged in via cookies
+2026-07-10 12:25:09,372 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:25:11,223 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:25:11,223 - INFO - Resume upload attempted
+2026-07-10 12:25:11,249 - INFO - Resume update attempted successfully
+2026-07-10 12:26:16,882 - INFO - Scheduled: update_resume
+2026-07-10 12:26:16,883 - INFO - ====== WebDriver manager ======
+2026-07-10 12:26:27,353 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:26:27,450 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:26:27,541 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:26:50,937 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:26:56,732 - INFO - Already logged in via cookies
+2026-07-10 12:26:59,044 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:27:01,282 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:27:01,283 - INFO - Resume upload attempted
+2026-07-10 12:27:01,291 - INFO - Resume update attempted successfully
+2026-07-10 12:28:08,247 - INFO - Scheduled: update_resume
+2026-07-10 12:28:08,248 - INFO - ====== WebDriver manager ======
+2026-07-10 12:28:18,199 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:28:18,288 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:28:18,341 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:28:39,462 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:28:46,433 - INFO - Already logged in via cookies
+2026-07-10 12:28:51,230 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:28:52,773 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:28:52,774 - INFO - Resume upload attempted
+2026-07-10 12:28:52,781 - INFO - Resume update attempted successfully
+2026-07-10 12:29:58,035 - INFO - Scheduled: update_resume
+2026-07-10 12:29:58,036 - INFO - ====== WebDriver manager ======
+2026-07-10 12:30:11,260 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:30:11,368 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:30:11,463 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:30:29,199 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:30:35,641 - INFO - Already logged in via cookies
+2026-07-10 12:30:37,678 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:30:39,363 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:30:39,364 - INFO - Resume upload attempted
+2026-07-10 12:30:39,388 - INFO - Resume update attempted successfully
+2026-07-10 12:31:45,719 - INFO - Scheduled: update_resume
+2026-07-10 12:31:45,722 - INFO - ====== WebDriver manager ======
+2026-07-10 12:32:03,323 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:32:03,606 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:32:03,790 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:32:28,337 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:32:35,561 - INFO - Already logged in via cookies
+2026-07-10 12:32:37,721 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:32:39,440 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:32:39,442 - INFO - Resume upload attempted
+2026-07-10 12:32:39,461 - INFO - Resume update attempted successfully
+2026-07-10 12:33:50,065 - INFO - Scheduled: update_resume
+2026-07-10 12:33:50,067 - INFO - ====== WebDriver manager ======
+2026-07-10 12:34:09,237 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:34:09,413 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:34:09,552 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:34:26,783 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:34:35,164 - INFO - Already logged in via cookies
+2026-07-10 12:34:37,606 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:34:39,138 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:34:39,138 - INFO - Resume upload attempted
+2026-07-10 12:34:39,230 - INFO - Resume update attempted successfully
+2026-07-10 12:35:47,336 - INFO - Scheduled: update_resume
+2026-07-10 12:35:47,337 - INFO - ====== WebDriver manager ======
+2026-07-10 12:35:51,249 - INFO - Script interrupted by user. Exiting.
+2026-07-10 12:54:20,654 - INFO - Triggering initial resume update and job search/apply immediately on boot...
+2026-07-10 12:54:20,655 - INFO - Scheduled: update_resume
+2026-07-10 12:54:20,656 - INFO - ====== WebDriver manager ======
+2026-07-10 12:54:37,047 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:54:37,254 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:54:37,338 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:54:51,297 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:54:58,334 - INFO - Already logged in via cookies
+2026-07-10 12:55:01,043 - INFO - Sent resume file path to file input. Waiting for upload to complete...
+2026-07-10 12:55:03,114 - INFO - Confirmed: Success toast detected on Naukri page.
+2026-07-10 12:55:03,115 - INFO - Resume upload attempted
+2026-07-10 12:55:03,178 - INFO - Resume update attempted successfully
+2026-07-10 12:55:12,004 - INFO - Starting search_and_apply_jobs
+2026-07-10 12:55:12,006 - INFO - ====== WebDriver manager ======
+2026-07-10 12:55:25,544 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:55:25,653 - INFO - Get LATEST chromedriver version for google-chrome
+2026-07-10 12:55:25,759 - INFO - Driver [C:\Users\0218387\.wdm\drivers\chromedriver\win64\148.0.7778.178\chromedriver-win32/chromedriver.exe] found in cache
+2026-07-10 12:55:41,041 - INFO - Loaded cookies and refreshed.
+2026-07-10 12:55:47,957 - INFO - Already logged in via cookies
+2026-07-10 12:55:47,958 - INFO - Searching for: Python Developer
+2026-07-10 12:55:59,340 - INFO - Saved snapshot: snapshots\search_box_missing_20260710_125559.html
+2026-07-10 12:55:59,341 - INFO - Searching for: Python Backend Developer
+2026-07-10 12:56:10,898 - INFO - Saved snapshot: snapshots\search_box_missing_20260710_125610.html
+2026-07-10 12:56:10,899 - INFO - Searching for: Gen AI Engineer
