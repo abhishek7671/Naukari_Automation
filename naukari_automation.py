@@ -16,6 +16,7 @@ import time
 import pickle
 import random
 import logging
+import urllib.parse
 import schedule
 import pandas as pd
 from datetime import datetime
@@ -70,6 +71,7 @@ logging.getLogger('').addHandler(console)
 # ---------------- Helpers ----------------
 def setup_driver(headless=HEADLESS):
     options = webdriver.ChromeOptions()
+    options.page_load_strategy = 'eager'
     options.add_argument("--start-maximized")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -118,14 +120,20 @@ def load_cookies(driver, path=COOKIE_FILE):
     try:
         with open(path, 'rb') as f:
             cookies = pickle.load(f)
-        driver.get("https://www.naukri.com")
+        try:
+            driver.get("https://www.naukri.com")
+        except TimeoutException:
+            pass  # Ignore initial page load timeouts
         for c in cookies:
             c.pop('sameSite', None)
             try:
                 driver.add_cookie(c)
             except Exception:
                 pass
-        driver.refresh()
+        try:
+            driver.refresh()
+        except TimeoutException:
+            pass  # Ignore refresh timeouts
         logging.info("Loaded cookies and refreshed.")
         return True
     except Exception as e:
@@ -332,51 +340,11 @@ def search_and_apply_jobs_once():
         for keyword in JOB_KEYWORDS:
             try:
                 logging.info(f"Searching for: {keyword}")
-                driver.get('https://www.naukri.com')
-                # find search box (tolerant)
-                try:
-                    search_box = WebDriverWait(driver, 10).until(
-                        EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Enter skills / designations']"))
-                    )
-                except TimeoutException:
-                    alt = driver.find_elements(By.XPATH, "//input[contains(@aria-label,'skills') or contains(@placeholder,'Search')]")
-                    if alt:
-                        search_box = alt[0]
-                    else:
-                        snapshot_page(driver, 'search_box_missing')
-                        continue
-
-                search_box.clear()
-                search_box.send_keys(keyword)
-                search_box.send_keys(Keys.RETURN)
-                time.sleep(2 + random.uniform(0.5, 1.5))
-
-                # Apply location filters heuristically
-                for location in LOCATIONS:
-                    try:
-                        loc_xpath = f"//label[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '{location.lower()}')]|//span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'), '{location.lower()}')]"
-                        els = driver.find_elements(By.XPATH, loc_xpath)
-                        if els:
-                            try:
-                                els[0].click()
-                                time.sleep(1 + random.uniform(0.2, 0.8))
-                            except Exception:
-                                pass
-                    except Exception:
-                        continue
-
-                # Experience filter (best-effort)
-                try:
-                    exp_xpath = f"//label[contains(., '{EXPERIENCE} Years') or contains(., '{EXPERIENCE} yrs')]"
-                    exp_els = driver.find_elements(By.XPATH, exp_xpath)
-                    if exp_els:
-                        try:
-                            exp_els[0].click()
-                            time.sleep(1)
-                        except Exception:
-                            pass
-                except Exception:
-                    pass
+                # Direct URL search navigation with location and experience to bypass fragile UI sidebar filters
+                loc_param = ",".join(LOCATIONS)
+                search_url = f"https://www.naukri.com/jobs-in-india?k={urllib.parse.quote(keyword)}&l={urllib.parse.quote(loc_param)}&experience={EXPERIENCE}"
+                driver.get(search_url)
+                time.sleep(3 + random.uniform(0.5, 1.5))
 
                 # Collect job cards (tolerant selectors)
                 jobs = driver.find_elements(By.XPATH, "//a[contains(@class,'title') or contains(@class,'jobTuple') or contains(@class,'jobTitle')]")
@@ -392,6 +360,8 @@ def search_and_apply_jobs_once():
                             collected_jobs.append({'title': title, 'link': link})
                     except Exception as e:
                         logging.warning(f"Error reading job element: {e}")
+
+                logging.info(f"Found {len(collected_jobs)} job listings for keyword: {keyword}")
 
                 # Load existing links to avoid duplicate apply/visits
                 existing_links = []
@@ -413,27 +383,25 @@ def search_and_apply_jobs_once():
 
                     job_links.append(job_link)
 
-                    if any(kw in normalize(job_title) for kw in APPLY_KEYWORDS):
-                        logging.info(f"Considering auto-apply for: {job_title}")
-                        try:
-                            driver.get(job_link)
-                            time.sleep(2 + random.uniform(0.5, 1.5))
+                    # Auto-apply to all search results since they are inherently tech-stack-filtered
+                    logging.info(f"Considering auto-apply for: {job_title}")
+                    try:
+                        driver.get(job_link)
+                        time.sleep(2 + random.uniform(0.5, 1.5))
 
-                            apply_btns = driver.find_elements(By.XPATH, "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'quick apply') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apply now') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apply')]")
-                            if apply_btns:
-                                try:
-                                    apply_btns[0].click()
-                                    logging.info(f"Clicked apply for {job_title} (attempt)")
-                                    time.sleep(2 + random.uniform(0.5, 1.2))
-                                except Exception as e:
-                                    logging.warning(f"Apply click failed: {e}")
-                            else:
-                                logging.info(f"No one-click apply found for {job_title}; saved link for manual apply")
-                        except Exception as e:
-                            logging.error(f"Error processing job page {job_link}: {e}")
-                            snapshot_page(driver, 'job_page_error')
-                    else:
-                        logging.info(f"Skipped auto-apply (keywords mismatch): {job_title}")
+                        apply_btns = driver.find_elements(By.XPATH, "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'quick apply') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apply now') or contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'apply')]")
+                        if apply_btns:
+                            try:
+                                apply_btns[0].click()
+                                logging.info(f"Clicked apply for {job_title} (attempt)")
+                                time.sleep(2 + random.uniform(0.5, 1.2))
+                            except Exception as e:
+                                logging.warning(f"Apply click failed: {e}")
+                        else:
+                            logging.info(f"No one-click apply found for {job_title}; saved link for manual apply")
+                    except Exception as e:
+                        logging.error(f"Error processing job page {job_link}: {e}")
+                        snapshot_page(driver, 'job_page_error')
 
             except Exception as e:
                 logging.error(f"Search loop error for keyword {keyword}: {e}")
